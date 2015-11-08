@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+ <beans>
+  <bean id="vtiServerConnector" class="org.mortbay.jetty.security.SslSocketConnector">
+    <property name="port">
+       <value>${vti.server.port}</value>
+    </property>
+    <property name="headerBufferSize">
+       <value>32768</value>
+    </property>
+    <property name="maxIdleTime">
+       <value>30000</value>
+    </property>
+    <property name="keystore">
+       <value>${vti.server.ssl.keystore}</value>
+    </property>
+    <property name="keyPassword">
+       <value>${vti.server.ssl.password}</value>
+    </property>
+    <property name="password">
+       <value>${vti.server.ssl.password}</value>
+    </property>
+    <property name="keystoreType">
+       <value>JCEKS</value>
+    </property>
+  </bean>
+</beans>

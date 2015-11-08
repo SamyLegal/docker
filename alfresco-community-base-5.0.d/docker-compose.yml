@@ -1,0 +1,27 @@
+
+alfresco:
+  image: alfresco-community-full:5.0.d
+  container_name: afresco
+  links:
+    - mysql
+  ports:
+    - "8080:8080"
+  volumes:
+    - /tmp/alfresco/data:/srv/alfresco/alf_data
+  environment:
+    - ALFRESCO_DB_USENAME=alfresco
+    - ALFRESCO_DB_PASSWORD=alfresco
+
+# Serveur de base de données MySQL pour alfresco
+mysql:
+  image: mysql
+  container_name: mysql-alfresco
+  volumes:
+    # Pour le volume de la base mysql, nous mettons les données dans le répertoire /tmp car
+    # impossible d'accéder au répertoire /Users sur Mac avec mysql
+    - /tmp/alfresco/mysql:/var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=alfresco
+    - MYSQL_DATABASE=alfresco
+    - MYSQL_USER=alfresco
+    - MYSQL_PASSWORD=alfresco
