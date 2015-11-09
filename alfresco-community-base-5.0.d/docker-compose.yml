@@ -1,6 +1,6 @@
-
+# Serveur alfresco
 alfresco:
-  image: alfresco-community-full:5.0.d
+  image: alfresco-community-base:5.0.d
   container_name: afresco
   links:
     - mysql

@@ -6,7 +6,6 @@ VOLUME /srv/alfresco/alf_data
 
 # Tomcat settings
 WORKDIR /usr/local/tomcat/
-RUN mkdir shared shared/classes shared/lib
 COPY tomcat .
 
 EXPOSE 8080
