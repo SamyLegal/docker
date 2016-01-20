@@ -1,7 +1,7 @@
 FROM tomcat:7.0
 
 # APR - Tomcat native library - http://tomcat.apache.org/native-doc/
-# Tomcat native library we have better peformance and metrics for the server
+# Tomcat native library we have better performance and metrics for the server
 RUN apt-get update && apt-get install -y libapr1-dev libssl-dev
 
 # Alfresco

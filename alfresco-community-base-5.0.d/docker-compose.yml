@@ -7,7 +7,7 @@ alfresco:
   ports:
     - "8080:8080"
   volumes:
-    - /Users/samuel/Outils/docker/alfresco:/srv/alfresco
+    - ./data/alfresco:/srv/alfresco
   environment:
     - ALFRESCO_DB_HOST=mysql
     - ALFRESCO_DB_USERNAME=root
